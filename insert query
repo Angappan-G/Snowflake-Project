@@ -1,0 +1,29 @@
+// create table for customer:
+create or replace table customer_1
+   (
+       custid number,
+       fname VARCHAR(30),
+       mname VARCHAR(30),
+       ltname VARCHAR(30),
+       city VARCHAR(15),
+       mobileno number,
+       occupation VARCHAR(10),
+       dob DATE );
+       
+// insert values:
+
+insert into customer VALUES(01,'Ramesh','Chandra','Sharma','Delhi',9543198345,'Service','1976-12-06');
+insert into customer (custid,fname,mname,ltname,city,mobileno,occupation,dob) values (02, 'Krish', 'Kumar', 'Sharama','Chennai', 8978674567, 'Pilot', '1999-01-05'),
+(03, 'Naveen','Kumar','Sharma', 'Chennai', 9080706050, 'Engineer', '1998-12-20');
+insert into customer_1 select * from customer;
+
+// insert all :
+insert all 
+into customer_1 (custid,fname,mname,ltname,city,mobileno,occupation,dob) values (04,'Kavya','Chandra','Aedekar','Mumbai',8976523190,'Doctor','1976-09-19')
+into customer values (05,'Abhishek','Dutta',null,'Kolkata',9856198761,'Auditor','1973-05-22')
+into customer values (06,'Shankar',null,'Nair','Chennai',8765489076,'Service','1976-07-12')
+into branch values (1000, null, 'Karur');
+select * from dual;
+
+select * from customer_1;
+select * from customer;
